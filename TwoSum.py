@@ -1,3 +1,5 @@
+import util
+
 class Solution:
     def twoSum(self, nums, target):
         """
@@ -29,9 +31,10 @@ def testCase(inputList, target):
     print("Output: ")
     print(outputList)
 
-print("-----------------testCase1-----------------")
+util.printCaseHeader(1)
 testCase([2,7,11,15], 9)
-print("-----------------testCase2-----------------")
+util.printCaseHeader(2)
 testCase([3,2,4], 6)
-print("-----------------testCase3-----------------")
+util.printCaseHeader(3)
 testCase([3,3], 6)
+
