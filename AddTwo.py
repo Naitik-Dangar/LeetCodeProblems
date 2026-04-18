@@ -1,3 +1,5 @@
+import util
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -33,4 +35,41 @@ class Solution:
             currentNode.val = int(res_str[i])
 
         return l3.next
+    
+def ListToNode(l1: list) -> ListNode:
+    head = ListNode()
+    tempNode = head
+    for i in l1:
+        tempNode.next = ListNode()
+        tempNode = tempNode.next 
+        tempNode.val = i
+    return head.next
 
+def NodeToList(l1: ListNode) -> list:
+    toReturn = []
+    while l1:
+        toReturn.append(l1.val)
+        l1 = l1.next
+    return toReturn
+
+
+
+def testCase(l1, l2):
+    print("Input:\nl1 = ")
+    print(l1)
+    print("l2 = ")
+    print(l2)
+    l1Node = ListToNode(l1)
+    l2Node = ListToNode(l2)
+    testSol = Solution()
+    outputNode = testSol.addTwoNumbers(l1Node, l2Node)
+    outputList = NodeToList(outputNode)
+    print("Output: ")
+    print(outputList)
+
+util.printCaseHeader(1)
+testCase([2,4,3], [5,6,4])
+util.printCaseHeader(2)
+testCase([0], [0])
+util.printCaseHeader(3)
+testCase([9,9,9,9,9,9,9], [9,9,9,9])
