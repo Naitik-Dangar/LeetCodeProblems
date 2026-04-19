@@ -18,7 +18,7 @@ class Solution(object):
             index = math.floor(len(mergedList) / 2)
             median = mergedList[int(index)]
         else: # If list has even number of elements 
-            index1 = len(mergedList) / 2
+            index1 = int(len(mergedList) / 2)
             index2 = index1 - 1
             median = (mergedList[index1] + mergedList[index2]) / 2.0
         
@@ -27,7 +27,7 @@ class Solution(object):
 def testCase(nums1, nums2):
     print("Input:\nnums1 = ")
     print(nums1)
-    pirnt("nums2 = ")
+    print("nums2 = ")
     print(nums2)
     
     testSol = Solution()
