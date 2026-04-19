@@ -1,4 +1,5 @@
 import math
+import util
 
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
@@ -22,3 +23,19 @@ class Solution(object):
             median = (mergedList[index1] + mergedList[index2]) / 2.0
         
         return median
+
+def testCase(nums1, nums2):
+    print("Input:\nnums1 = ")
+    print(nums1)
+    pirnt("nums2 = ")
+    print(nums2)
+    
+    testSol = Solution()
+    output = testSol.findMedianSortedArrays(nums1, nums2)
+    print("Output: ")
+    print(output)
+
+util.printCaseHeader(1)
+testCase([1,3], [2])
+util.printCaseHeader(2)
+testCase([1,2], [3,4])
