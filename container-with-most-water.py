@@ -6,23 +6,23 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        max = 0
-        h = 0
-        w = 0
+        left = 0
+        right = len(height) - 1
 
-        for i in range(len(height)):
-            for j in range(i, len(height)):
-                if height[i] <= height[j]:
-                    h = height[i]
-                else:
-                    h = height[j]
-                
-                w = j - i
+        most = 0
 
-                if max < (h * w):
-                    max = (h * w)
-                
-        return max
+        while left < right:
+            h = min(height[left], height[right])
+            w = right - left
+
+            most = max(most, h * w)
+
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+
+        return most
 
 def testCase(x):
     print("Input:\nx = ")
